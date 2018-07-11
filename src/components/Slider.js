@@ -77,7 +77,7 @@ class Slider extends Component {
       window.addEventListener("mousemove", this._mouseMove, false);
 
       let selection = [...this.props.selection];
-      let selected = this.props.scale.invert(e.clientX - this.svg.getBoundingClientRect().x);
+      let selected = this.props.scale.invert(e.clientX - this.svg.getBoundingClientRect().left);
       let dragIndex = 2;
 
       let dy = e.clientY - this.svg.getBoundingClientRect().y
@@ -107,7 +107,7 @@ class Slider extends Component {
   mouseMove = e => {
     if (this.state.dragging) {
       let selection = [...this.props.selection];
-      let pos = this.props.scale.invert(e.clientX - this.svg.getBoundingClientRect().x);
+      let pos = this.props.scale.invert(e.clientX - this.svg.getBoundingClientRect().left);
 
 
       if(this.state.dragIndex < 2){
